@@ -1,0 +1,92 @@
+/* Center the main container vertically and horizontally */
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the main container */
+.maindiv {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the chat container */
+.chat {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Styling for the team heading */
+.chat h1 {
+    font-size: 20px;
+    /* margin-bottom: 10px; */
+    background-color: #4CAF50;
+    color:#fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+/* Styling for the chat messages */
+#msgs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    max-height: 200px;
+    padding-right: 10px;
+}
+
+/* Styling for individual chat bubbles */
+#msgs li {
+    padding: 5px;
+    /* background-color: #f1f0f0; */
+    margin-bottom: 5px;
+    border-radius: 4px;
+    /* float: left; */
+}
+
+/* Styling for the client container */
+#client_one {
+    margin-top: 10px;
+}
+
+#msgForm {
+    display: flex;
+}
+
+/* Styling for the message input */
+#messageInput1 {
+    flex: 1;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Styling for the send button */
+#client_one button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#msgs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 200px; /* Set the desired height */
+    overflow-y: auto; /* Add vertical scrollbar when content exceeds height */
+}
+
+

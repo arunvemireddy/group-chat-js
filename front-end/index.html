@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div>
+        <form id="myForm">
+            <h1>Welcome</h1>
+            <input id="username" type="text" value="" placeholder="enter your username">
+            <!-- <input id="password" type="text" value="" placeholder="enter your password"> -->
+            <button id="submitButton" disabled>start chatting</button>
+        </form>
+    </div>
+    <div id="container">
+    </div>
+</body>
+
+
+
+<script>
+    const usernameInput = document.getElementById('username');
+    // const passwordInput = document.getElementById('password');
+    const submitButton = document.getElementById('submitButton');
+    const form = document.getElementById('myForm');
+    const container = document.getElementById('container');
+    form.addEventListener('submit', verifyUser);
+
+    function checkInputs() {
+        const usernameValue = usernameInput.value.trim();
+        // const passwordValue = passwordInput.value.trim();
+
+        if (usernameValue !== '') {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    usernameInput.addEventListener('input', checkInputs);
+    // passwordInput.addEventListener('input', checkInputs);
+
+    function verifyUser(event) {
+        const di = [{
+            "name": "arun",
+            "username": "arun0701"
+        }, {
+            "name": "anil",
+            "username": "anil123"
+        }, {
+            "name": "vinod",
+            "username": "vinod789"
+        }, {
+            "name": "manikanta",
+            "username": "mani1289"
+        }, {
+            "name": "vamsi",
+            "username": "123vamsi"
+        }, {
+            "name": "micheal",
+            "username": "mike1245"
+        }]
+
+        event.preventDefault();
+        let usernameValue = usernameInput.value.trim();
+        // let passwordValue = passwordInput.value.trim();
+
+        for (let i = 0; i < di.length; i++) {
+            if (di[i].username == usernameValue) {
+                console.log("successful login");
+                const data = {};
+                data['username'] = di[i].username;
+                data['name'] = di[i].name;
+
+                localStorage.setItem('data', JSON.stringify(data));
+                window.location.href = "index1.html";
+            }
+        }
+    }
+</script>
+
+</html>
